@@ -95,6 +95,7 @@ class Client(
         settings: dict = {},
         proxy: str = None,
         delay_range: list = None,
+        user_headers: dict = {},
         logger=DEFAULT_LOGGER,
         **kwargs,
     ):
@@ -104,6 +105,7 @@ class Client(
         self.settings = settings
         self.logger = logger
         self.delay_range = delay_range
+        self.user_headers = user_headers
 
         self.set_proxy(proxy)
 

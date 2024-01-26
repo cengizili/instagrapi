@@ -335,7 +335,7 @@ class LoginMixin(PreLoginFlowMixin, PostLoginFlowMixin):
         self.set_ig_u_rur(self.settings.get("ig_u_rur"))
         self.set_ig_www_claim(self.settings.get("ig_www_claim"))
         # init headers
-        headers = self.base_headers
+        headers = self.user_headers or self.base_headers
         headers.update({"Authorization": self.authorization})
         self.private.headers.update(headers)
         return True
